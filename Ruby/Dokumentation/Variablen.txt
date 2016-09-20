@@ -1,0 +1,7 @@
+Ruby ist eine Interpretierende Sprache, d.h. es ist keine Datentyp Festlegung der Variablen nötig.
+
+Der Interpreter erkennt an dem zugewiesenen Wert um welchen Datentyp es sich handelt. 
+Bsp.:
+	var = "Ein String"	#var ist eine Objekt der Klasse String
+	var.class 			#Erzeugt Ausgabe des Datentyps
+	
