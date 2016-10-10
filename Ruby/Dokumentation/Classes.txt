@@ -1,0 +1,75 @@
+OOP Objektorientierte Programmierung
+
+Klassen
+	Klassen bilden den Plan von konkreten Objekten
+	Def:
+		class Player
+
+		end
+	Eine Klasse wird durch die Verwendung des Schlüsselwortes class definiert. Die 	
+	Definition ist immer in einen Block eingeschlosssen.
+	
+Objekt:
+	Wenn ich mit einer Klasse arbeiten will, dann erzeuge ich ein Objekt das in eienr Variable 		gespeichert wird.
+		obj = Player.new
+	Ein neues Objekt wird einer Varibalen mit beliebiger Bezeichnung gespeichert. Es wird mit dem 		Namen der Kklasse nd dem Aufruf der Methode new erzeugt. Das Obejkt hat alle 			Eigenschaften(Attribute) und Fähigkeiten(Methoden), die in der Klasse definiert sind.
+
+Konstruktor:	
+	Beim erzeugen eines Objektes mit Player.new wird automatisch eine Methode "initialize" 		aufgerufen. Diese Methode gibt es in jeder Ruby Klasse. Es ist möglich diese existierende 		Methode mit einer eigenen Mehtode zu überschreiben, um dort die Basiswerte des Objektes 	festzulegen.
+Bsp:	
+	def initialize(name, health=100) 
+		@name=name
+		@health=health
+		
+	end
+Instanzvariablen/Eigenschaften
+	In der OOP hat ein Objekt bestimme Eigenschaften, die es charakterisieren.
+	In Ruby werden diese Eigenschaften als Instanzvariablen definiert und ein @ wird dem Namen 		vorangestellt. 
+	Beispiel: @name
+	Das Besodnere einer Instanzvariable oder Eigenschaft ist, dasss sie in der ganzen Klasse gilt 		und verwertet werden kann. Wichtig: Variablen die innerhalb von einem Block definiert werden 		und kein @ vorangestellt haben, sind sogenannte lokale Variablen und gelten nur innerhalb des 		Blockes in dem sie definiert sind.
+
+	Eine Instanzvariable wird zu einer EIgenschaft, indem es in der Klasse Methoden gibt, die den 		Zugriff von außerhalb (Aufruf durch das Objekt) ermöglichen. Eine Eigenschaft hat einen 	sogenannten Setter, der es ermöglicht einen Wert zu setzen; und einen Getter der einen Wert 		zurück gibt.
+
+	Getter:
+		def name
+			@name	
+		end
+		
+		Die Methode heißt genauso wie die Instanzvariable ohne das @. Sie hat die Aufgabe den 			Wert der Instanzvariable name zurückzugeben.
+		Aufruf:
+			puts obj.name
+			gibt den Namen des Players aus
+		Kurzform:
+			Anstelle einer Methoden definition kann ich Kurzform verwenden: 			attr_reader :name	
+
+	Setter:
+		def name=("name")
+			@name=name
+		end
+			
+		Der Setter zum Speichern eines Wertes in einer Instanzvariable heißt wie die 			Instanzvariable mit einem = im Namen.
+		Aufruf:
+			obj.name = "Supergirl"
+		Kurzform:
+			attr_writer :name
+
+	Kurzform für Setter und Getter (reader und writer)
+		attr_accessor :name
+
+Virtuelles Attribut
+	Ein VA ist eine Methode die so aussieht, bzw. genutzt werden wie eine Eigenschaft, die 		allerdings keine Instanzvariable hat; also keine echte Eigenschaft ist, obwohl sie von außen 		so aussieht.
+		def normalized_health
+			@health * 1000
+		end
+		
+			
+
+
+
+
+
+
+
+
+
+	
