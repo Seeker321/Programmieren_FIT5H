@@ -18,8 +18,8 @@ class Kunde
 	attr_writer :adresse
 
 
-		def initialize(vorname="", name="")
-			@name = "#{vorname} ".capitalize + "#{name}".capitalize
+		def initialize(name)
+			@name = name.capitalize
 		end
 
 		def get_kunden_daten
@@ -27,7 +27,7 @@ class Kunde
 		end
 end
 
-kunde1 = Kunde.new("Theo", "Sommer")
+kunde1 = Kunde.new("Theo Sommer")
 kunde1.name = "Theo Sonnenschein"
 puts kunde1.name
 kunde1.gehalt = "2000"

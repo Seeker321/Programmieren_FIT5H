@@ -18,5 +18,25 @@ Methoden von Arrays
 	.pop(Letzter Wert weg)
 	.empty?(Ist array leer)
 	.delete_at(2)
+	
+Iterationen
+	var = %w(ich u du)
+	
+	Methode zum durchlaufen der einzelnen Elemente
+	var.each do |iwas|
 
+	end
 
+	Methode, die im Block einen bolschen Wert erwartet und bei true den Inahlt zurückgibt.
+	var. select
+	
+	Bsp:
+	ret = var.select { |v| v.size > 1 }
+	ret enthält ["ich", "du"]
+
+	Gegenteil von select
+	ret = var.reject { |v| v.size > 1 }
+	ret enthält ["u"]
+
+	gibt ein sortiertes Array zurück
+	var.sort
