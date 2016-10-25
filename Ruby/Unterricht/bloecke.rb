@@ -154,15 +154,33 @@ while i < arr1.size do
 
 	arr1.each do |var|
 		if var == arr2[i]
-			match << var
+			match << arr2[i]		
 
-		else
-			diff << var
 		end
-		
 	end
 	i += 1
 end
+
+u = 0 
+
+while u < match.size do
+
+	arr1.each do |val|
+		if match[u] != val
+			diff << val
+		end
+	end
+	arr2.each do |val|
+		if match [u] != val
+			diff << val
+		end
+	end
+
+	u+=1
+
+end
+
+
 
 ergebnis[:diff] = diff
 ergebnis[:match] = match
