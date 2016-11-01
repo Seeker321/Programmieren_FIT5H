@@ -7,12 +7,12 @@ end
 ###1c,d,e
 hash = Hash.new
 
-arr.each do |val|
-	hash[val] = rand(100) + 100
+arr.each do |key|
+	hash[key] = rand(100) + 100
 end
 
 hash.each do |key,val|
-			if key > 150
+			if val > 150
 				puts "Index: #{key} - Wert: #{val}. WOW"
 			else
 				puts "Index: #{key} - Wert: #{val}"
@@ -180,10 +180,9 @@ while u < match.size do
 
 end
 
-
-
 ergebnis[:diff] = diff
 ergebnis[:match] = match
 
 puts "ergebnis = #{ergebnis}"
+
 
