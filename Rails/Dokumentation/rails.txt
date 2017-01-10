@@ -1,0 +1,36 @@
+Der Befehl rails wird immer im Basis-Ordner der Applikation ausgeführt.
+
+Das Programm rails hat auf der Console ausgeführt eine Reihe von Aktionen:
+
+rails new projekt_name
+	Startet neues Projekt
+
+rails s
+	Startet einen Server der auf Port 3000 lauscht
+
+rails g controller events
+	Erstellt in der App einen Controller mit dem Namen events_controller.rb
+
+rails d controller events
+	Löscht den Controller
+
+rails g model event name:string location:string price:decimal
+	Es werden Dateien zur Erstellung einer Tabelle erzeugt, mit dem Namen events und den Spalten: name, location, price
+
+rails g scaffold event name:string location:string price:decimal
+	- Es wird eine komplette Ressource erstellt, mit dem Namen events und den Spalten: name, location, price
+	- Controller mit allen Actions
+	- View Ordner events mit allen Dateien
+	- in routes.rb wird die Zeile hinzugefügt: resources :event
+
+CRUD
+	Create Read Update Delete
+	Standard Actions einer WebAnwendung:
+		Index: alle Elemente werden gezeigt
+		show: ein einzelnes Elemetn wird angezeigt
+		new: Formular zur Erzeugung eines Elements
+		create: ACtion zum speichern eines neuen Elements
+		edit: Formular zum veräandern eines Elements
+		update: Action zur druchführung der änderung in der Tabelle
+		destroy: Action zum Löschen eines Elements	
+	

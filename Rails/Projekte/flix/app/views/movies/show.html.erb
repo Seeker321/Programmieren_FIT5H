@@ -1,0 +1,11 @@
+<h1><%= @movie.title %></h1>
+
+<p><%= @movie.rating %></p>
+
+<h3>Umsatz</h3>
+<p><%= @movie.total_gross %></p>
+<h3>Beschreibung</h3>
+<p><%= @movie.description %></p>
+<h3>Erschienen</h3>
+<p><%= @movie.released_on %></p>
+<%= link_to "Alle Movies anzeigen", movies_path %>

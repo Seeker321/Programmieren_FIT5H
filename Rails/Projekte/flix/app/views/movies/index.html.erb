@@ -1,0 +1,41 @@
+<h1><%= pluralize(@movies.count, "Movie") %></h1>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Rating</th>
+<th>Kosten</th>
+<th>Beschreibung</th>
+<th>Erschienen</th>
+<th>Review</th>
+<th>Show</th>
+<th>Edit</th>
+<th>Del</th>
+</tr>
+
+<% @movies.each do |mov| %>
+<tr>
+	<td><%= truncate(mov.title, length: 40) %></td>
+	<td><%= mov.rating %></td>
+	<% if mov.total_gross >= 5000000 %>
+
+	<td><%= mov.total_gross %></td>
+
+	<% else %>
+
+		<td> FLOP </td>
+
+	<% end %>>
+	<td><%= mov.description %></td>
+	<td><%= mov.released_on %></td>
+	<td><%= link_to "Reviews", movie_reviews_path(mov.id) %></td>
+	<td><%= link_to "Show", movie_path(mov.id) %></td>
+	<td><%= link_to "Edit", edit_movie_path(mov.id) %></td>
+	<td><%= link_to 'Del', movie_path(mov.id), method: :delete, data: { confirm: 'Sicher löschen?'} %></td>
+<% end %>
+
+</tr>
+
+</table>
+
+<p><%= link_to "Neuer Movie", new_movie_path %></p>

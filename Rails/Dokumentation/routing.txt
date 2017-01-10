@@ -1,0 +1,25 @@
+Die Verbindung von Browseraufruf und Serverantwort wird in Rails mit Hilfe der Datei config/routes.rb hergestellt.
+Damit der Server eine aufgerufene URL findet muss sie mit einem Eintrag in der routes.rb matchen.
+
+Basis URL
+	root 'events#index'
+		der Aufruf localhost:3000 wird nun zur index Action des Events Controllers weitergeleitet
+
+REsourcen
+	resources :events
+		mit der Funktion resources und dem Namen eines Controllers als Symbol, wird beim Start des Servers gesicher, dass ein Aufruf von:
+		http://localhost:3000/events
+		bei index Action des Events Controllers landet
+
+Verschachtelte Resourcen
+	resources :events do
+		resources :registrations
+	end
+
+	Die Resource registrations kann nur in Verbindung mit einem Event aufgerufen, gespeichert und gelöscht werden.
+	Der Browseraufruf lautet dann: 
+	http://localhost:3000/events/4/registrations
+
+Methode zur Kontrolle der Resourcen:
+	rake routes
+		gibt alle in der routes.rb definierten routen aus.

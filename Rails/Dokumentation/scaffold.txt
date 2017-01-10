@@ -1,0 +1,13 @@
+1) rails g scaffold registration name:string email:string how_heard:string event:references		# der scaffold erstellt einen controller mit allen Funktionen. Also er legt zusätzlich eine Tabelle an, Migrations uvm...
+2) rake db:migrate
+3) app/models/event.rb		#has_many :registrations hinzufügen
+							#app/models/registration.rb hat mit event.rb eine 1->n Beziehung
+							#has_many :registrations, dependent: :destroy an dem dem has_many anfügen
+4) rails c
+	# r = Registration.new
+	# e = Event.first
+	# r
+	# r.event = e
+	# r.save
+	# r2 = e.registrations.new
+# r2.save 
