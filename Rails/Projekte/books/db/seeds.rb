@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Book.create(author: "Kim", title: "Test", description: "jasd", published_on: "2014-4-22")
+Like.create(quality: 3, book_id: 1)
