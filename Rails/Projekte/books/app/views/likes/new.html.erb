@@ -1,0 +1,6 @@
+<h1>New Like for <%= @book.title %></h1>
+
+<%= render 'form', like: @like %>
+
+<%= link_to 'Back', book_likes_path(@book.id) %>
+ 

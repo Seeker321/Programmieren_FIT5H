@@ -1,0 +1,41 @@
+1. Erstellen Sie eine Applikation books.#
+	-ordner anlegen
+	-rails new books
+	-in den ordner gehen
+	-im gemfile rubyracer aktivieren
+	-bundle install durchführen
+
+2. Nutzen Sie für diese Applikation das CSS-Framework Foundation.
+	-Siehe Anleitung im Doku Ordner
+
+3. Erstellen Sie eine Resource books mit den Spalten: author, title, description (text), published_on (Date)
+	rails g scaffold books author:string title:string description:text published_on:date
+
+4. Stellen Sie sicher, dass beim Aufruf der Seite die index-Action der Resource Books aufgerufen wird.
+	in routes rb zusätzlich  root 'books#index' einfügen
+
+
+5. Binden Sie die topbar ein. Erstellen Sie einen Link in der Navigationsleiste, der auf die Index-Seite verweist.
+	siehe css datei im doku ordner
+	neue datei in app/views/layouts anlegen: _top_bar.html.erb  topbar aus anderem projekt kopieren und einfügen, in die application.html.erb <%= render 'layouts/top_bar' %> einfügen
+	link_to in top_bar einfügen
+
+6.  Erstellen Sie eine untergeordnete Resource Likes, die eine Spalte quality (integer) hat. Sichern Sie ab, dass ein Like immer einem Book-Objekt zugeordnet ist.
+	siehe scaffold datei im doku ordner!
+	Wichtig!! book:references nicht vergessen
+
+	siehe nested_resource.txt
+
+	Die Links in sämtlichen View Dateien anpassen, sowie die controller überarbeiten
+
+	link in book#index hinzufügen zur erstellung von likes
+
+
+7. Stellen Sie sicher, dass der Benutzer bei der Neuanlage/Update eines Likes eine Zahl von 1 bis 5 eingeben muss. Ansonsten wird das Formular nicht gespeichert.
+
+validates :quality, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5} in models like.rb hinzufügen
+
+8. Erstellen Sie einen View-Helper, der für ein Book-Objekt den Durchschnitt aller Likes für dieses Objekt errechnet und auf der Book-Show-Seite ausgibt. 
+	
+neue spalte mit adressierung der methode in book#index hinzufügen 
+
